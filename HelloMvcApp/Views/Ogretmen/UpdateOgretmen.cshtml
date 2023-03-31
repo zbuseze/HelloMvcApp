@@ -1,0 +1,25 @@
+﻿@model Ogretmen
+@{
+    ViewData["Title"] = "UpdateOgretmen";
+}
+
+<h1>Öğretmen Bilgileri Güncelleme</h1>
+
+<form asp-controller="Ogretmen" asp-action="UpdateOgretmen" method="post">
+    <input type="hidden" asp-for="Ogretmenid" />
+    <div class="mb-3">
+        <label class="form-label">Öğretmen Adı</label>
+        <input class="form-control" type="text" asp-for="Ad">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Öğretmen Soyadı</label>
+        <input class="form-control" type="text" asp-for="Soyad">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Öğretmen Tc Kimlik Numarası</label>
+        <input class="form-control" type="text" asp-for="Tckimlik">
+    </div>
+    
+
+    <input type="submit" class="btn btn-success" value="Kaydet" />
+</form>

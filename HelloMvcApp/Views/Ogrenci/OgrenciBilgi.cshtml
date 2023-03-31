@@ -1,0 +1,57 @@
+﻿@model InfoDTO
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OgrenciBilgi</title>
+</head>
+<body>
+    <p>Öğrenci Bilgileri</p>
+    @if(ViewData["Student"]!=null)
+    {
+        <p>@(((Ogrenci)(ViewData["Student"])).Ad)</p>
+        <p>@(((Ogrenci)(ViewData["Student"])).Soyad)</p>
+        <p>@(((Ogrenci)(ViewData["Student"])).Numara)</p>
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı.</p>
+    }
+
+    <p>Öğretmen Bilgileri</p>
+    @if(ViewBag.Teacher!=null)
+    {
+        <p>@ViewBag.Teacher.Ad</p>
+        <p>@ViewBag.Teacher.Soyad</p>
+        <p>@ViewBag.Teacher.Tckimlik</p>
+
+    }
+    else
+    {
+        <p>Öğretmen bulunamadı.</p>
+    }
+
+    <p>Öğrenci Bilgileri</p>
+    @if(Model!=null && Model.Ogrenci!=null)
+    {
+        <p>@Model.Ogrenci.ToString()</p>
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı</p>
+    }
+
+    <p>Öğretmen Bilgileri</p>
+    @if(Model!=null && Model.Ogretmen!=null)
+    {
+        <p>@Model.Ogretmen.ToString()</p>
+    }
+        
+    
+</body>
+</html>
